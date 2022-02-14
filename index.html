@@ -28,17 +28,19 @@
      <div class="row">
          <div class="col">
              <div class="form-box py-5 d-flex justify-content-center">
-                <form class="row row-cols-md-auto g-3 align-items-center">
+                <form 
+                action="javascript:void(0)"
+                onsubmit="handleOnSubmit(this)"  class="row row-cols-md-auto g-3 align-items-center">
                     <div class="col-12">
                       <label class="visually-hidden" for="inlineFormInputGroupUsername">Your Task</label>
                       <div class="input-group">
-                        <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="Your Task">
+                        <input type="text" name="task" required class="form-control" id="inlineFormInputGroupUsername" placeholder="Your Task">
                       </div>
                     </div>
                     <div class="col-12">
                         <label class="visually-hidden" for="inlineFormInputGroupUsername">Hours</label>
                         <div class="input-group">
-                          <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="Hours">
+                          <input type="number" required name="hr" class="form-control" id="inlineFormInputGroupUsername" placeholder="Hours">
                         </div>
                       </div>
                   
@@ -53,130 +55,21 @@
 
      <!--list area-->
      <div class="row">
-         <div class="col-md-6 mb-3">
+         <div class="col-md-6 mb-3 mr-2">
              <h2>Task List</h2>
              <table class="table table-striped">
-                <tbody>
-                  <tr>
-                    <th scope="row"><input type="checkbox" name="" id="" /></th>
-                    <td>Watching TV </td>
-                    <td>5 hrs</td>
-                   <td class="text-end"><button class="bg-transparent"><i class="fa-solid fa-trash" title="Delete"></i></button>
-
-                    <button class="btn btn-success"><i class="fa-solid fa-arrow-right" title="Mark as bad list"></i>
-                    </button>
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <th scope="row"><input type="checkbox" name="" id="" /></th>
-                    <td>Sleeping </td>
-                    <td>10 hrs</td>
-                    <td class="text-end"><button class="bg-transparent"><i class="fa-solid fa-trash" title="Delete"></i></button>
-
-                        <button class="btn btn-success"><i class="fa-solid fa-arrow-right" title="Mark as bad list"></i>
-                        </button>
-                        </td>
-                  </tr>
-
-                  <tr>
-                    <th scope="row"><input type="checkbox" name="" id="" /></th>
-                    <td>Studying </td>
-                    <td>6 hrs</td>
-                    <td class="text-end"><button class="bg-transparent"><i class="fa-solid fa-trash" title="Delete"></i></button>
-
-                        <button class="btn btn-success"><i class="fa-solid fa-arrow-right" title="Mark as bad list"></i>
-                        </button>
-                        </td>
-                  </tr>
-
-                  <tr>
-                    <th scope="row"><input type="checkbox" name="" id="" /></th>
-                    <td>Playing Cricket</td>
-                    <td>5 hrs</td>
-                    <td class="text-end"><button class="bg-transparent"><i class="fa-solid fa-trash" title="Delete"></i></button>
-
-                        <button class="btn btn-success"><i class="fa-solid fa-arrow-right" title="Mark as bad list"></i>
-                        </button>
-                        </td>
-                  </tr>
-
-                  <tr>
-                    <th scope="row"><input type="checkbox" name="" id="" /></th>
-                    <td>Working</td>
-                    <td>20hrs</td>
-                    <td class="text-end"><button class="bg-transparent"><i class="fa-solid fa-trash" title="Delete"></i></button>
-
-                        <button class="btn btn-success"><i class="fa-solid fa-arrow-right" title="Mark as bad list"></i>
-                        </button>
-                        </td>
-                  </tr>
+                <tbody id="task-list"> 
+                
 
                 </tbody>
               </table>
-             
-        
          </div>
          
          <div class="col-md-6 mb-3">
             <h2>Bad List</h2>
             <table class="table table-striped">
                <tbody>
-                 <tr>
-                   <th scope="row"><input type="checkbox" name="" id="" /></th>
-                   <td>Watching TV </td>
-                   <td>5 hrs</td>
-                  <td class="text-end"><button class="bg-transparent"><i class="fa-solid fa-trash" title="Delete"></i></button>
-
-                   <button class="btn btn-success"><i class="fa-solid fa-arrow-right" title="Mark as bad list"></i>
-                   </button>
-                   </td>
-                 </tr>
-
-                 <tr>
-                   <th scope="row"><input type="checkbox" name="" id="" /></th>
-                   <td>Sleeping </td>
-                   <td>10 hrs</td>
-                   <td class="text-end"><button class="bg-transparent"><i class="fa-solid fa-trash" title="Delete"></i></button>
-
-                       <button class="btn btn-success"><i class="fa-solid fa-arrow-right" title="Mark as bad list"></i>
-                       </button>
-                       </td>
-                 </tr>
-
-                 <tr>
-                   <th scope="row"><input type="checkbox" name="" id="" /></th>
-                   <td>Studying </td>
-                   <td>6 hrs</td>
-                   <td class="text-end"><button class="bg-transparent"><i class="fa-solid fa-trash" title="Delete"></i></button>
-
-                       <button class="btn btn-success"><i class="fa-solid fa-arrow-right" title="Mark as bad list"></i>
-                       </button>
-                       </td>
-                 </tr>
-
-                 <tr>
-                   <th scope="row"><input type="checkbox" name="" id="" /></th>
-                   <td>Playing Cricket</td>
-                   <td>5 hrs</td>
-                   <td class="text-end"><button class="bg-transparent"><i class="fa-solid fa-trash" title="Delete"></i></button>
-
-                       <button class="btn btn-success"><i class="fa-solid fa-arrow-right" title="Mark as bad list"></i>
-                       </button>
-                       </td>
-                 </tr>
-
-                 <tr>
-                   <th scope="row"><input type="checkbox" name="" id="" /></th>
-                   <td>Working</td>
-                   <td>20hrs</td>
-                   <td class="text-end"><button class="bg-transparent"><i class="fa-solid fa-trash" title="Delete"></i></button>
-
-                       <button class="btn btn-success"><i class="fa-solid fa-arrow-right" title="Mark as bad list"></i>
-                       </button>
-                       </td>
-                 </tr>
-
+            
                </tbody>
              </table>
             
@@ -186,7 +79,7 @@
 
         <div class="row mt-3 pb-5 fs-3 fw-bolder text-light">
             <div class="col text-center">
-                Total time allocated this week = 50 hours
+                Total time allocated this week = <span id="totalHours">0</span> hours
             </div>
         </div>
      </div>
